@@ -1,0 +1,78 @@
+# Laboratory Rorcord
+
+**Remote control from Windows to RaspberryPi**
+
+**Haoran Han, Glaswgow Department, UESTC**
+
+
+
+- ### introduction
+
+This experiment contains how to remote control RaspberryPi from Window through 3 different method: putty (command line), VNS_Viewer and remote control function enbeded in Windows.
+
+- ### time
+
+2020/3/7-2020/3/10
+
+- ### location
+
+Home
+
+- ### prepareration
+
+Hardware: laptop, router,netting twine, RaspberryPi,
+
+Software: DIsk_Genius, Win32_DiskImager, Advanced_IP_SCanner, Putty, VNC_Viewer
+
+
+
+## Experiment Procedure
+
+I firstly downlowd the imager of OS, Raspbian, through the [official website](https://www.raspberrypi.org/downloads/).
+
+Then, I use Win32_DiskImager to copy this operating system in to the SD card.
+
+In order to connect the laptop, we need to creat a file name "SSH" without any suffix in the SD card.
+
+Next, put the SD card into the RaspberryPi and charge the electrity.
+
+I connect the PraspberryPi with th router of my home and thus it could connect to the Internet.
+
+Then, use Advanced_IP_Scanner to check the IP in the default region (192.168.1.0-192.168.1.255) and we could find the IP address for our raspberry. In my experiment, it is initially 192.168.1.104.
+
+then, past this IP into the Putty, and we could connect the Raspberry through SHH method and control it through the command line.
+
+next, following this procedure:
+
+- input default user name and passowrd: "pi" and "raspberry" respectively.
+
+- type "sudo apt-get install tightvncserver xrdp". When the intasllation is finished, we could use remote control function enbded in the Windows to connect the RaspberryPi.
+
+- type "sudo raspi-config", go to the "5 Interfacing Option", go to the "P3 VNC", enable it. After this operation, we could use VNC viewer to connecte it.
+
+- Do not reverse the sequence of the upper two stpes, or the VNC Viewer will cannot be used.
+
+- type "sudo raspi-config", go to the "7 Advanced Option", go to the "A5 Resolution", choose an  option apart from the default one. Or, your connection will show nothing but a line of "the desktop cannot be shown currently".
+
+- Type the IP address into the VNC Viewer, connect to the RaspberryPi, and we could operate the GUI from now on.
+
+  ![](C:\Users\韩浩然\Desktop\Teamwork\The desktop.PNG)
+
+- When we looking into the upright coner, we could find a "wifi" symbol, connect it to the router in your home, and let the mouse stay on that symbol, you could find another IP address. In my expeiment, the IP address is 192.168.1.105. Notice that, for the same hardware, there are two different IP address, one is for the connection by the netting twine, one is for the wirless wifi.
+
+- Next, you could disconnect the  netting twine, and use the 192.168.1.105 to connect the RaspibarryPi.
+
+- Then, RaspberryPi could also connect to your phone hotspot and this connection could be automatic when you start your Phone. Howerever, the IP address allocated by my iPhone is 172.20.10.101. So if you want to use IP_scnner to find it, add another section of IP address.
+
+All the work has been done.
+
+## Tips
+
+- Every time when you want to connect the RaspberryPi, the IP address mybe different, that because the IP address is allocated by the routor dynamicly.
+- However, don't try to set the static IP address. Even though the IP address could be detected by my IP Scnner, but I could not connect the raspberry through the static IP address among any methods.
+- I stronly suggest use VNC viewer, it has a better performance than the Windows romte control.
+- When you choose a Country, choose China but not "Chile", or the RaspberryPi cannot detect any Wifi.
+
+## Failure
+
+I cannot use SVC to control the RaspberryPi remotely. this work will be continued by Song.
