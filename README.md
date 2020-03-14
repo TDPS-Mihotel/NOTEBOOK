@@ -1,20 +1,22 @@
 # NOTEBOOK
 emmm
 
+---
+Table of Contents
+1. [Overview](#overview)
+2. [Brief of Notebook](#brief-of-notebook)
+   1. [📋Outline](#clipboard-outline)
+   2. [⚠️Note](#warning-note)
+   3. [📄Coverage](#page_facing_up-coverage)
+   4. [📐Data Record](#triangular_ruler-data-record)
+3. [Cover and Title Page](#Cover-and-Title-Page)
+---
+
+
 ## Overview
 
 **Notebook** is very important for experiment. There are many requirements for notebook, so we need to pay attention to how to write a notebook. The reference Chinese website is [here](https://www.biomart.cn/experiment/430/599/627/205672.htm).
 
----
-Table of Contents
-1. [Overview](#️Overview)
-2. [Brief of Notebook](#️Brief-of-Notebook)
-   1. [📋 Outline](#-Outline)
-   2. [⚠️ Note](#-Note)
-   3. [📄 Coverage](#-Coverage)
-   4. [📐 Data Record](#-Data-Record)
-3. [Cover and Title Page](#Cover-and-Title-Page)
----
 
 ## Brief of Notebook
 
