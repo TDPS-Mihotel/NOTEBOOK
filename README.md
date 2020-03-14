@@ -1,5 +1,5 @@
 # NOTEBOOK
-emmm
+We use MARKDOWN to write the notebook.
 
 ---
 Table of Contents
