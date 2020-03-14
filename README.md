@@ -9,10 +9,10 @@ emmm
 Table of Contents
 1. [Overview](#️Overview)
 2. [Brief of Notebook](#️Brief-of-Notebook)
-   1. [📋Outline](#-Outline)
-   2. [⚠️Note](#-Note)
-   3. [📄Coverage](#-Coverage)
-   4. [📐Data Record](#-Data-Record)
+   1. [📋Outline](#📋Outline)
+   2. [⚠️Note](#⚠️Note)
+   3. [📄Coverage](#📄Coverage)
+   4. [📐Data Record](#📐Data-Record)
 3. [Cover and Title Page](#Cover-and-Title-Page)
 ---
 
