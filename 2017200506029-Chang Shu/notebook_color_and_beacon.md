@@ -233,7 +233,7 @@ As is shown above, purple is preserved in white while other colors are filtered 
 
  Finally, we can obtain a color value range table as follows.
 
-| color  | [$h_{min}$, $h_{max}$] | [$S_{min}$, $S_{max}$] | [$V_{min}$, $V_{max}$] |
+| color  | [Hmin, hmax]           | [Hmin, Smax]           | [Vmin, Vmax]           |
 | ------ | ---------------------- | ---------------------- | ---------------------- |
 | orange | [14, 21]               | [199, 208]             | [234, 240]             |
 | red    | [0, 3]                 | [246, 255]             | [144, 154]             |
@@ -274,7 +274,7 @@ Then I use the GUI to find the range value.
 
 Finally, I obtain the range value of green in HSV space as follows.
 
-| color | [hmin, hmax] | [Smin, Smax] | [Vmin, Vmax] |
+| color | [Hmin, hmax]           | [Hmin, Smax]           | [Vmin, Vmax]           |
 | ----- | ---------------------- | ---------------------- | ---------------------- |
 | green | [55, 63]               | [236, 255]             | [156, 173]             |
 
