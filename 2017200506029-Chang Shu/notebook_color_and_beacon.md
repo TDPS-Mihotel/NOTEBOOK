@@ -34,7 +34,7 @@ The code is shown below.
 
 ##### Results:
 
-![1590908948290](C:\Users\树畅\AppData\Roaming\Typora\typora-user-images\1590908948290.png)
+<img src="https://github.com/TDPS-Mihotel/NOTEBOOK/blob/master/2017200506029-Chang%20Shu/imgs/filters.png" alt="filters.png" style="zoom: 40%;"  />
 
 As we can see from above, four blurred images look smoother than original image. Among them, I choose the GaussianBlur as the filter in our following process.
 
@@ -198,49 +198,34 @@ The histogram of different colors are obtained using Python and plotted as follo
 
 ###### Orange:
 
-![orange_hsv](E:\python\pycharm\TDPS\imgs\orange_hsv.png)
+<img src="https://github.com/TDPS-Mihotel/NOTEBOOK/blob/master/2017200506029-Chang%20Shu/imgs/orange_hsv.png" alt="orange_hsv.png" style="zoom: 40%;"  />
 
-<center>pure orange in HSV Space<center>
+<img src="https://github.com/TDPS-Mihotel/NOTEBOOK/blob/master/2017200506029-Chang%20Shu/imgs/orange_thresh.png" alt="orange_thresh.png" style="zoom: 40%;"  />
 
-![orange_thresh](E:\python\pycharm\TDPS\imgs\orange_thresh.png)
-
-<center>The image with only orange kept<center>
 
 As is shown above, orange is preserved in white while other colors are filtered with the thresholds in the trackbars.
 
 ###### Yellow:
 
-![yellow_hsv](E:\python\pycharm\TDPS\imgs\yellow_hsv.png)
+<img src="https://github.com/TDPS-Mihotel/NOTEBOOK/blob/master/2017200506029-Chang%20Shu/imgs/yellow_hsv.png" alt="yellow_hsv.png" style="zoom: 40%;"  />
 
-<center>pure yellow in HSV Space<center>
-
-![yellow_thresh](E:\python\pycharm\TDPS\imgs\yellow_thresh.png)
-
-<center>The image with only yellow kept<center>
+<img src="https://github.com/TDPS-Mihotel/NOTEBOOK/blob/master/2017200506029-Chang%20Shu/imgs/yellow_thresh.png" alt="yellow_thresh.png" style="zoom: 40%;"  />
 
 As is shown above, yellow is preserved in white while other colors are filtered with the thresholds in the trackbars.
 
 ###### Red:
 
-![red_hsv](E:\python\pycharm\TDPS\imgs\red_hsv.png)
+<img src="https://github.com/TDPS-Mihotel/NOTEBOOK/blob/master/2017200506029-Chang%20Shu/imgs/red_hsv.png" alt="red_hsv.png" style="zoom: 40%;"  />
 
-<center>pure red in HSV Space<center>
-
-![red_thresh](E:\python\pycharm\TDPS\imgs\red_thresh.png)
-
-<center>The image with only red kept<center>
+<img src="https://github.com/TDPS-Mihotel/NOTEBOOK/blob/master/2017200506029-Chang%20Shu/imgs/red_thresh.png" alt="red_thresh.png" style="zoom: 40%;"  />
 
 As is shown above, red is preserved in white while other colors are filtered with the thresholds in the trackbars.
 
 ###### Purple:
 
-![purple_hsv](E:\python\pycharm\TDPS\imgs\purple_hsv.png)
+<img src="https://github.com/TDPS-Mihotel/NOTEBOOK/blob/master/2017200506029-Chang%20Shu/imgs/purple_hsv.png" alt="purple_hsv.png" style="zoom: 40%;"  />
 
-<center>pure purple in HSV Space<center>
-
-![purple_thresh](E:\python\pycharm\TDPS\imgs\purple_thresh.png)
-
-<center>The image with only purple kept<center>
+<img src="https://github.com/TDPS-Mihotel/NOTEBOOK/blob/master/2017200506029-Chang%20Shu/imgs/purple_thresh.png" alt="purple_thresh.png" style="zoom: 40%;"  />
 
 As is shown above, purple is preserved in white while other colors are filtered with the thresholds in the trackbars.
 
@@ -275,23 +260,21 @@ Since we are allowed to use 2 beacons in the project, I choose the green block a
 
 Here, we place a green block on the left side of the bridge.
 
-![green](E:\python\pycharm\TDPS\imgs\green.jpg)
+<img src="https://github.com/TDPS-Mihotel/NOTEBOOK/blob/master/2017200506029-Chang%20Shu/imgs/green.png" alt="green.png" style="zoom: 40%;"  />
 
 The histogram of green is shown below.
 
-![green_hsv](E:\python\pycharm\TDPS\imgs\green_hsv.png)
-
-<center>pure green in HSV space<center>
+<img src="https://github.com/TDPS-Mihotel/NOTEBOOK/blob/master/2017200506029-Chang%20Shu/imgs/green_hsv.png" alt="green_hsv.png" style="zoom: 40%;"  />
 
 Then I use the GUI to find the range value.
 
-![green_thresh](E:\python\pycharm\TDPS\imgs\green_thresh.png)
+<img src="https://github.com/TDPS-Mihotel/NOTEBOOK/blob/master/2017200506029-Chang%20Shu/imgs/green_thresh.png" alt="green_thresh.png" style="zoom: 40%;"  />
 
 ##### Results:
 
 Finally, I obtain the range value of green in HSV space as follows.
 
-| color | [$h_{min}$, $h_{max}$] | [$S_{min}$, $S_{max}$] | [$V_{min}$, $V_{max}$] |
+| color | [hmin, hmax] | [Smin, Smax] | [Vmin, Vmax] |
 | ----- | ---------------------- | ---------------------- | ---------------------- |
 | green | [55, 63]               | [236, 255]             | [156, 173]             |
 
