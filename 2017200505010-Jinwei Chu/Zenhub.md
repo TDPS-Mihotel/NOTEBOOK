@@ -1,5 +1,9 @@
 ## Tutorial on using Zenhub
 
+### Video tutorial on Zenhub
+  In order to provide our team members with direct impression on Zenhub and have a better experience on using Zenhub, I made a video to intrduce how to use Zenhub and uloaded onto the Internet. The network link is put below:
+  **https://b23.tv/SxSUNU**
+
 ### PipeLines
 - ZenHub Pipelines are built using GitHub repositories. When a **Pipeline** is created, each "card" on the Board represents a **GitHub Issue or Pull Request**.
 - Move the cursor onto the **Pipeline** and slide the mouse wheel to **look through the tasks**.
