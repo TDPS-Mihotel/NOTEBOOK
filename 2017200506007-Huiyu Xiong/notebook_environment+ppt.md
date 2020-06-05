@@ -76,3 +76,96 @@ The last repository named playground is given to try how to use git and github. 
 Through the use of GitHub open-source online platform, our project cooperation is more convenient and efficient. Upload notes to GitHub's library to help us understand the experimental process and results of team members in real time, so as to make remote communication more smooth.
 
 ------
+
+### Subject: Overall Planning of Defense PPT
+
+#### Date: <u>May 24</u>   Author: <u>Huiyu Xiong</u>
+
+##### Purpose: 
+
+As the defense is one of the important scoring standards, our group designated me as the head of presentation, master plan the PPT process and the style of slides. The premise of making PPT is to grasp the whole project and sort out the explanation logic suitable for outsiders. Then, learn the tutorial of PPT production, make ppt more beautiful, and highlight the main purpose. At last, the main points of all the students' explanations are sorted out and presented on the limited PPT.
+
+##### Procedure:
+
+At the beginning of the course, I began to learn how to make exquisite PPT in Zhihu, BiliBili app, CSDN and other forums. Then, I asked my former senior and senior sister about the important points of presentation and PPT. Then, through regular group meetings, I discussed with the team members about the content of PPT and determined the outline of PPT. Finally, I collated and summarized the materials provided by the team members, completed the whole ppt production, and chatted with the team members one by one to ensure that the rigor and beauty of the materials coexist.
+
+##### Experiment:
+
+**Outline**
+``` markdown
+	• background+Partition of patio tasks
+		○ need partners who may be familiar with the whole project
+	• division of work
+	• management（Github)
+	• group elaboration (picture + presentation points)
+		○ First discuss in the group, and then sort out the main points to be told
+		○ give as many pictures as possible, and then mark the pictures displayed and the pictures to be highlighted, because the size may be different. For the pictures that are not available, it may not be used if the layout is not enough
+	• summary (what TDPs we learned)
+		○ Complete according to the next meeting
+```
+
+
+<img src="https://github.com/TDPS-Mihotel/NOTEBOOK/blob/master/2017200506007-Huiyu%20Xiong/imag/PPT_template.png" style="zoom: 50%;"  />
+_Query and Learn Excellent PPT Templates_
+
+<img src="https://github.com/TDPS-Mihotel/NOTEBOOK/blob/master/2017200506007-Huiyu%20Xiong/imag/PPT_slide.png" style="zoom: 50%;"  />
+_The Process of Making PPT_
+
+<img src="https://github.com/TDPS-Mihotel/NOTEBOOK/blob/master/2017200506007-Huiyu%20Xiong/imag/PPT_logic.png" style="zoom: 50%;"  />
+_Sorting and Linking PPT Logic_
+
+##### Results:
+
+Finally, it presents a beautiful PPT, ready for the presentation on June 8. The animation is fluent, the connection is full of logic, the expression is accurate and in place, and the graphic and text are combined. Let the teacher understand our project intuitively.
+
+------
+
+### Subject: Conference Records
+
+#### Date: <u>June 5</u>   Author: <u>Huiyu Xiong</u>
+
+##### Purpose: 
+
+Rehearse the presentation and improve the preparation. Be familiar with MS team's real-time meeting in advance, and learn remote control and other operations. It is convenient to modify the question before the formal reply, and then optimize the presentation.
+
+##### Procedure:
+
+>This session is divided into two parts:
+>1. Demonstrate and explain the car on webots
+>2. Use PPT to talk about team contribution in groups and members and answer the questions raised by teachers
+
+##### Experiment:
+
+**Simulation**
+``` markdown
+During the video presentation, explain the following points:
+	• Two cameras
+	• Trolley structure
+	• Different curves
+	• Orange Box
+	• Strong recognition ability (duck)
+	• How to keep going after the road (Compass)
+	• Bridge (see picture later)
+	• Green beacon (considering not hitting trees)
+	• Continue to follow the compass
+	• Detect the door, and then switch to patrol line (the door is much smaller than the required size)
+	• Color box switch graph, shield other colors, narrow path
+	• Cross part recognition
+```
+
+**Slide**
+``` markdown
+During the PPT presentation, we should focus on points:
+	• There should be a logical relationship between the cohesion within sub groups and between sub groups
+	• Improper use of some pictures
+	• Detailed distribution of explanations by some members
+	• Arrangement order of summary page
+	• The use of remote control in MS team
+	• Grasp the whole process of slide show
+```
+
+##### Results:
+
+Have an early understanding of the presentation on June 8 and improve on the preparation deficiencies. We will improve the presentation of projects and strive for better results.
+
+------
