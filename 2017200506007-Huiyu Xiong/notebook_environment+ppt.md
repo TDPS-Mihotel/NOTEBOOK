@@ -30,3 +30,49 @@ Browse the courseware and MS team messages given by the teacher. Sort out and su
 From the above outline, we can intuitively find all models that need to be built in the world. The details covered include not only dimensional requirements but also location information. Make our subsequent environment more accurate and meet customer needs.
 
 ------
+
+### Subject: Organize and Summarize the Contents of Notebook
+
+#### Date: <u>April 21</u>   Author: <u>Huiyu Xiong</u>
+
+##### Purpose: 
+
+As this is our first team work project, we are not familiar with taking experimental notes. This experiment aims to sort out the teacher's requirements for notebook and make an outline. Help you to complete the notebook more efficiently. And find a convenient way of online communication, so that everyone can quickly exchange learning content, and even realize cooperation projects remotely.
+
+##### Procedure:
+
+Browse the courseware and MS team messages given by the teacher. Sort out and summarize the outline of exchange. Find an open source platform and build the GitHub Library of the team. In this warehouse, many groups are set up to facilitate the exchange of experience and record the experimental process. Finally, in the readme file, we briefly describe the notebook recording rules and precautions.
+
+##### Experiment:
+
+ [OUTLINE OF NOTEBOOK](https://github.com/TDPS-Mihotel/NOTEBOOK/blob/master/README.md).
+ 
+About notebook, we use github to finish it.
+
+There are 7 repositories：
+The first repository, named Mihotel, is mainly the overall planning of the whole project. We have two branches here. One is the former physical one（hardware）, and the other is the current master one. （simulation) We can get the version changes from the submission infor.. 
+
+And bout the banch:     
+	• The details and requirements of some tasks are listed.            
+	• Selection of configuration            
+	• Sorting out task requirements            
+	• expense list
+
+The second repository, notebook, is our daily lab record.
+	• we first sorted out the outline of the experimental record according to the reference material given by teachers
+	•  for each member, record recent experiments following the outline.
+
+Visual path, STM32 learning part, we are still learning, so the data does not hand out into files.
+Report, we haven't planned to do this part.
+
+The team work section lists the tools and tutorials. For the convenience of understanding, this part is written in Chinese. The overall project development is constrained.
+	• Development specification: file name; punctuation; coding format; language
+	• Learning materials: some tutorials (markdown, GitHub, zenhub) to help us to manage the project; tutorials of tools needed for project development (VSC, SSH, phyhon)
+
+The last repository named playground is given to try how to use git and github. Because not all of people in our group have used it before.
+
+##### Results:
+
+Through the use of GitHub open-source online platform, our project cooperation is more convenient and efficient. Upload notes to GitHub's library to help us understand the experimental process and results of team members in real time, so as to make remote communication more smooth.
+
+------
