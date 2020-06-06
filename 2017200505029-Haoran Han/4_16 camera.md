@@ -17,7 +17,8 @@ To figure out the usage of webot camera specificaly.
 - The direction that the camera towards is the **negtive direction along the z-axis** (opposite to the blue arrow).
 
 - the upper part of the camera is along the **positive dirction along the y-axis** (towards the green arrow). The position of the camera that I select:
-![Camera_Position.PNG](https://images.zenhubusercontent.com/5e5e045cbf668358438d1902/e962f860-9d0e-4016-81ff-abbd962a86d6)
+
+  ![Basic1](4_16 camera.assets/Basic1.png)
 
 - The typical Python code that calls the camera:
 ```
@@ -58,11 +59,11 @@ image=cv2.merge((b,g,r))
 
 if we dose not change the RGB channel:
 
-![2.png](https://images.zenhubusercontent.com/5e5e045cbf668358438d1902/198c3a07-9dd6-40dd-84a4-02d2fbf08ca5)
+![No_RGB](4_16 camera.assets/No_RGB.png)
 
 After change the RGB channel:
 
-![1.png](https://images.zenhubusercontent.com/5e5e045cbf668358438d1902/1d414a9a-739f-4d19-921d-bc1fc5b9aad1)
+![RGB](4_16 camera.assets/RGB.png)
 
 
 
@@ -83,9 +84,11 @@ code:
 
 If we do not rotate the image, the image will be 90 degree away from what we expect. 
 
-![3.png](https://images.zenhubusercontent.com/5e5e045cbf668358438d1902/8e65f4b9-6fb7-45f3-ad78-98eb28576472)
+
 
 After we add code to our previous code, The image will rotate to the original position.
+
+![Rotate](4_16 camera.assets/Rotate.png)
 
 
 

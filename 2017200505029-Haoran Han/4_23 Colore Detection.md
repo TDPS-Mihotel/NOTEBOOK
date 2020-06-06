@@ -15,7 +15,7 @@ The color recognition is already been accomplished. Even though Song and Shu has
 - Transform the background to single color
 
 The platform where I run my simulation is as follows:
-![Color_Recognition.PNG](https://images.zenhubusercontent.com/5e5e045cbf668358438d1902/6cc29084-925c-4287-8535-f51f43730138)
+![Color](4_23 Colore Detection.assets/Color.png)
 By adding another camera at the head of the robot, we could use it as a color sensor. The color distribution on RGB channel that I have capture is as follows:    
 red: 234     30        32
 green: 29       234      32

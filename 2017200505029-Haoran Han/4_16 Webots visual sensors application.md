@@ -9,9 +9,14 @@ To figure out the usage of webot sensor that may be used in project later. This 
 1. #### The Basic operation of the Webot object:
 
 - For any object, it is invisible originally. Only if we add a **"shape"** property to the children part, could the object become visible to us.
+
 - If the object need to interact with the environment (like a wheel), we need to modify the **"bnoumdingObject"** part of the robot. The bounding and the visible shape of the object does not need to be the same.
-- As shown below, the position and the direction is characterised by three line shown as below: **red, green, and blue** arrow represents the **x, y, z** axis respectively. By modifying the **"translation"** and **"rotation"** property of the object, the position and the direction could be changed. 
-![Dirction.PNG](https://images.zenhubusercontent.com/5e5e045cbf668358438d1902/991d619d-4267-4fcf-88f3-be0c3ed5ca9c)
+
+- As shown below, the position and the direction is characterised by three line shown as below: **red, green, and blue** arrow represents the **x, y, z** axis respectively. By modifying the **"translation"** and **"rotation"** property of the object, the position and the direction could be changed.
+
+   ![Basic](4_16 Webots visual sensors application.assets/Basic.png)
+  
+
 - For a default type of distance sensor, the maximum distance that it could detect is 10cm, which is far from enough. By modifying **"lookup Table"** property, we could change the maximum distance it could detect. `[x y z]` represent the maximum distance, the maximum return value and the standard of noise respective.
 
 2. #### Usage of the distance sensor:
@@ -47,8 +52,8 @@ where `robot.getDistanceSensor(dsNames[i])` will call the sensor and `ds[0].getV
 
 - The direction that the camera towards is the **negtive direction along the z-axis** (opposite to the blue arrow).
 
-- the upper part of the camera is along the **positive dirction along the y-axis** (towards the green arrow). The position of the camera that I select:
-![Camera_Position.PNG](https://images.zenhubusercontent.com/5e5e045cbf668358438d1902/e962f860-9d0e-4016-81ff-abbd962a86d6)
+- the upper part of the camera is along the **positive dirction along the y-axis (towards the green arrow). The position of the camera that I select:
+![Basic1](4_16 Webots visual sensors application.assets/Basic1.png)
 
 - The typical Python code that calls the camera:
 ```

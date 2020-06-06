@@ -29,5 +29,5 @@ def tri2angle(self, opposite, adjacent):
 
 Remember, if we do not consider the `zero situation`, there may be some error occurs in the process.
 
-![xx](https://images.zenhubusercontent.com/5e561721d0668b3a20133dfa/22ff8297-1e43-4585-b23d-d3ba8046d398)
+![angle](5_23 Convert to angle.assets/angle.png)
 
