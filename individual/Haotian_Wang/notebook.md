@@ -97,7 +97,7 @@ int main(int argc, char **argv) {
 
 - editing model with solid works
 
-![img](notebook.assets/}O$NT@0%UWPRHE86`RTE6YP-1591450413344.png)
+![}O$NT@0%UWPRHE86`RTE6YP](notebook.assets/}O$NT@0%UWPRHE86`RTE6YP.png)
 
 - importing errors occur
 
@@ -527,6 +527,14 @@ class Controller(object):
 if __name__ == "__main__":
     pass
 ```
+
+### improved feeder(2020/5/24)
+
+#### description:
+
+- a new feeder consisting three rotating motors
+
+![image-20200606232330670](notebook.assets/image-20200606232330670.png)
 
 ### update chassis.py(2020/5/26)
 
