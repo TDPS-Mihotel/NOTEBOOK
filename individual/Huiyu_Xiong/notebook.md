@@ -1,11 +1,45 @@
 ### Table of Content
 
-1. [Subject: The Requirements of Environment](#Subject-The-Requirements-of-Environment)
-2. [Subject: Organize and Summarize the Contents of Notebook](#Subject-Organize-and-Summarize-the-Contents-of-Notebook)
-3. [Subject: Overall Planning of Defense PPT](#Subject-Overall-Planning-of-Defense-PPT)
-4. [Subject: Conference Records](#Subject-Conference-Records)
+1. [Subject: Learn GitHub and Other Online Tools](#Learn-GitHub-and-Other-Online-Tools)
+2. [Subject: The Requirements of Environment](#Subject-The-Requirements-of-Environment)
+3. [Subject: Organize and Summarize the Contents of Notebook](#Subject-Organize-and-Summarize-the-Contents-of-Notebook)
+4. [Subject: Overall Planning of Defense PPT](#Subject-Overall-Planning-of-Defense-PPT)
+5. [Subject: Conference Records](#Subject-Conference-Records)
 
 ---
+### Subject: Learn GitHub and Other Online Tools
+
+#### Date: <u>March 18</u>   Author: <u>Huiyu Xiong</u>
+
+##### Purpose: 
+
+Learn to use online communication tools to make team management easier and more efficient. It is convenient for many people to share code remotely.
+
+##### Procedure:
+
+>This session is divided into two parts:
+>1. Unified learning through group meetings
+>2. Browse the forum and search for vegetarian courses
+
+##### Experiment:
+
+Browse the following information:
+
+[Chinese Translation: Official course](https://www.jianshu.com/p/548ff8e4f7cb).
+
+[Guide to GIT and GitHub](https://www.jianshu.com/p/296d22275cdd).
+
+[Detailed tutorial for novice](https://blog.csdn.net/Hanani_Jia/article/details/77950594).
+
+[Git Guide](https://blog.csdn.net/qq_34964197/article/details/81104419).
+
+And carefully read the conference recording frequency, familiar with the basic operation of GitHub and zenhub.
+
+##### Results:
+
+I can use GitHub skillfully and upload some files and materials in it. I often use the markdown file to record the experiments of TDPs courses, and regularly check the experimental data of other team members to learn about the experimental dynamics of others.
+
+------
 
 ### Subject: The Requirements of Environment
 
