@@ -28,7 +28,7 @@ Software: DIsk_Genius, Win32_DiskImager, Advanced_IP_SCanner, Putty, VNC_Viewer
 
 2. Then, I use **Win32_DiskImager** to copy this operating system in to the SD card.
 
-    :bulb: In order to connect the laptop, we need to create a file name `SSH` **without any suffix** in the SD card.
+   :bulb: In order to connect the laptop, we need to create a file name `SSH` **without any suffix** in the SD card.
 
 3. Next, put the SD card into the RaspberryPi and charge the electricity.
 

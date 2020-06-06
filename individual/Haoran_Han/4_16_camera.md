@@ -18,9 +18,10 @@ To figure out the usage of webot camera specificaly.
 
 - the upper part of the camera is along the **positive dirction along the y-axis** (towards the green arrow). The position of the camera that I select:
 
-  ![Basic1](4_16 camera.assets/Basic1.png)
+  ![Basic1](4_16_camera/Basic1.png)
 
 - The typical Python code that calls the camera:
+
 ```
 from controller import Robot,Camera
 ...
@@ -40,6 +41,7 @@ image = camera.getImageArray()
 #### 2. Usage of the Opencv package in the Webot:
 
 - Firstly, simply import the package
+
 ```
 import numpy as np
 import cv2
@@ -48,6 +50,7 @@ import cv2
 - Applying `.getImageArray()`, we could get a list that represent the picture.
 
 - By applying the next several lines of code, the picture could be process by the build in function of opencv
+
 ```
 image = np.array(camera.getImageArray(),dtype="uint8")
 r,g,b=cv2.split(image)
@@ -59,11 +62,11 @@ image=cv2.merge((b,g,r))
 
 if we dose not change the RGB channel:
 
-![No_RGB](4_16 camera.assets/No_RGB.png)
+![No_RGB](4_16_camera/No_RGB.png)
 
 After change the RGB channel:
 
-![RGB](4_16 camera.assets/RGB.png)
+![RGB](4_16_camera/RGB.png)
 
 
 
@@ -88,7 +91,7 @@ If we do not rotate the image, the image will be 90 degree away from what we exp
 
 After we add code to our previous code, The image will rotate to the original position.
 
-![Rotate](4_16 camera.assets/Rotate.png)
+![Rotate](4_16_camera/Rotate.png)
 
 
 

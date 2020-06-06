@@ -15,7 +15,7 @@ The color recognition is already been accomplished. Even though Song and Shu has
 - Transform the background to single color
 
 The platform where I run my simulation is as follows:
-![Color](4_23 Colore Detection.assets/Color.png)
+![Color](4_23_Colore_Detection/Color.png)
 By adding another camera at the head of the robot, we could use it as a color sensor. The color distribution on RGB channel that I have capture is as follows:    
 red: 234     30        32
 green: 29       234      32
@@ -25,6 +25,7 @@ white: 234     234      237
 ground: 65, 58, 52
 
 In that case, only by counting the channel that exceed 200, we could recognize the color. The code is as follows:
+
 ```Python
 def get_Color():
     image = np.array(Color.getImageArray(),dtype="uint8")
