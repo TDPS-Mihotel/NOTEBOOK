@@ -14,8 +14,9 @@ This experiment contains two parts:
 
 ##### Results:
 
-![image-20200606082703630](C:\Users\wetrwer\AppData\Roaming\Typora\typora-user-images\image-20200606082703630.png)
+<img src="notebook_chasisscontrol.assets/image-20200606082703630.png" alt="image-20200606082703630" style="zoom: 80%;" />
 
+<img src="notebook_chasisscontrol.assets/arm-1591441400186.png" alt="arm" style="zoom:80%;" />
 
 we finally found the reason is caused by the centre of mass, so i moved the bounding object of the car and adjust the position to solve the problem
 
@@ -40,11 +41,7 @@ This experiment contains three parts:
 
 ##### Results:
 
-<img src="C:\Users\wetrwer\AppData\Roaming\Typora\typora-user-images\image-20200606082436833.png" alt="image-20200606082436833" style="zoom:50%;" />
-
-
-
-
+<img src="notebook_chasisscontrol.assets/jixiebi.png" alt="jixiebi" style="zoom:67%;" />
 
 
 in fact, we choose to set its position directly at first, however, in the former version, we choose to throw the food without stop, so we have to set speed and us position limitation, because we can not precisely control the number of loops during a period.
@@ -70,9 +67,9 @@ This experiment contains three parts:
 
 ##### Results:
 
-![image-20200606082602075](C:\Users\wetrwer\AppData\Roaming\Typora\typora-user-images\image-20200606082602075.png)
+<img src="notebook_chasisscontrol.assets/image-20200606082619167-1591441451543.png" alt="image-20200606082619167" style="zoom:50%;" />
 
-![image-20200606082619167](C:\Users\wetrwer\AppData\Roaming\Typora\typora-user-images\image-20200606082619167.png)
+<img src="notebook_chasisscontrol.assets/image-20200606082602075-1591441455390.png" alt="image-20200606082602075" style="zoom:50%;" />
 
 the result is shown on the video, the latest version is the slow one, the video mod is the fast one.
 
@@ -92,10 +89,12 @@ This experiment contains three parts:
 
 ##### Results:
 
-![image-20200606083244222](C:\Users\wetrwer\AppData\Roaming\Typora\typora-user-images\image-20200606083244222.png)
+![image-20200606083244222](notebook_chasisscontrol.assets/image-20200606083244222.png)
 
-![image-20200606083301883](C:\Users\wetrwer\AppData\Roaming\Typora\typora-user-images\image-20200606083301883.png)
+![image-20200606083301883](notebook_chasisscontrol.assets/image-20200606083301883.png)
 
-<img src="C:\Users\wetrwer\AppData\Roaming\Typora\typora-user-images\image-20200606083452574.png" alt="image-20200606083452574" style="zoom:50%;" />
+<img src="notebook_chasisscontrol.assets/image-20200606083452574.png" alt="image-20200606083452574" style="zoom:50%;" />
+
+
 
 from above data we can clearly see that, the frame has 3 or more loss in each frame, and the car Shock greatly, thus we have to add the limitation back although we can get a faster simulation speed without the limitation.
