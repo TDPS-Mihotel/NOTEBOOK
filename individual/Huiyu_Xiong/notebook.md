@@ -1,3 +1,12 @@
+### Table of Content
+
+1. [Subject: The Requirements of Environment](#Subject-The-Requirements-of-Environment)
+2. [Subject: Organize and Summarize the Contents of Notebook](#Subject-Organize-and-Summarize-the-Contents-of-Notebook)
+3. [Subject: Overall Planning of Defense PPT](#Subject-Overall-Planning-of-Defense-PPT)
+4. [Subject: Conference Records](#Subject-Conference-Records)
+
+---
+
 ### Subject: The Requirements of Environment
 
 #### Date: <u>April 13</u>   Author: <u>Huiyu Xiong</u>
@@ -12,7 +21,7 @@ Browse the courseware and MS team messages given by the teacher. Sort out and su
 
 ##### Experiment:
 
-<img src="https://github.com/TDPS-Mihotel/NOTEBOOK/blob/master/2017200506007-Huiyu%20Xiong/imag/requirements.png"  style="zoom: 50%;"  />
+<img src="imag/requirements.png"  style="zoom: 50%;"  />
 
 - Max.Size for robot: 50cm * 50cm
 - From start, you can draw some leading lines so that the robot can follow; there is an orange beacon or box on the edge of the pond, where fish will be fed
@@ -46,7 +55,7 @@ Browse the courseware and MS team messages given by the teacher. Sort out and su
 ##### Experiment:
 
  [OUTLINE OF NOTEBOOK](https://github.com/TDPS-Mihotel/NOTEBOOK/blob/master/README.md).
- 
+
 About notebook, we use github to finish it.
 
 There are 7 repositories：
@@ -104,14 +113,13 @@ At the beginning of the course, I began to learn how to make exquisite PPT in Zh
 		○ Complete according to the next meeting
 ```
 
-
-<img src="https://github.com/TDPS-Mihotel/NOTEBOOK/blob/master/2017200506007-Huiyu%20Xiong/imag/PPT_template.png" style="zoom: 50%;"  />
+<img src="imag/PPT_template.png" style="zoom: 50%;"  />
 _Query and Learn Excellent PPT Templates_
 
-<img src="https://github.com/TDPS-Mihotel/NOTEBOOK/blob/master/2017200506007-Huiyu%20Xiong/imag/PPT_slide.png" style="zoom: 50%;"  />
+<img src="imag/PPT_slide.png" style="zoom: 50%;"  />
 _The Process of Making PPT_
 
-<img src="https://github.com/TDPS-Mihotel/NOTEBOOK/blob/master/2017200506007-Huiyu%20Xiong/imag/PPT_logic.png" style="zoom: 50%;"  />
+<img src="imag/PPT_logic.png" style="zoom: 50%;"  />
 _Sorting and Linking PPT Logic_
 
 ##### Results:

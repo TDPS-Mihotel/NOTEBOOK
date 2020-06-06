@@ -12,7 +12,7 @@ The handwritten chart is the general flow chart , but we still need fill in more
 
 Besides, we had meeting with vision group and chassis group to discuss about what information the car need and how to realize the car turning.
 
-![图片1](C:\Users\a\Desktop\NOTEBOOK\2017200605040-Hanpeng Xu\图片1.png)
+![图片1](图片1.png)
 
 
 ### Subject: decision flow chart details
@@ -26,7 +26,7 @@ After regular meeting , technical groups confirm many technical details (like :T
 ##### Solution:
 after meeting , we took a notebook of the meeting and made a brief diagram. But there was a lot we don't understand,such as: if the camera doesn't catch the bridge , how should the patrol car reflect. So ,We found a video that our upperclassmen made last semester when they were completing their assignments.![d5ba45b2c17b09194025375d283ac0e](C:\Users\a\Desktop\NOTEBOOK\2017200605040-Hanpeng Xu\d5ba45b2c17b09194025375d283ac0e.png)
 
-![2e2305760c75cba60f5174d2c52b5bc](C:\Users\a\Desktop\NOTEBOOK\2017200605040-Hanpeng Xu\2e2305760c75cba60f5174d2c52b5bc.png)
+![2e2305760c75cba60f5174d2c52b5bc](2e2305760c75cba60f5174d2c52b5bc.png)
 
 ### Subject: converting the flow chart into python code
 
@@ -41,9 +41,9 @@ First of all, we go to the Github community and see what framework someone else'
 
 After a lot of debugging, we decide to use a state machine frame.
 
-![e7d5b609644e7d274ba07e562014f70](C:\Users\a\Desktop\NOTEBOOK\2017200605040-Hanpeng Xu\e7d5b609644e7d274ba07e562014f70.png)
+![e7d5b609644e7d274ba07e562014f70](e7d5b609644e7d274ba07e562014f70.png)
 
-![5902c2946ed001ad016baddcf705c24](C:\Users\a\Desktop\NOTEBOOK\2017200605040-Hanpeng Xu\5902c2946ed001ad016baddcf705c24.png)
+![5902c2946ed001ad016baddcf705c24](5902c2946ed001ad016baddcf705c24.png)
 
 
 ## Subject: Final commissioning
@@ -54,4 +54,4 @@ After a lot of debugging, we decide to use a state machine frame.
 
 After the decision group code is completed, the trolley will be finally debugged.
 
-##### Solution:![fcfa091d93673ad43b802d24231ec2b](C:\Users\a\Desktop\NOTEBOOK\2017200605040-Hanpeng Xu\fcfa091d93673ad43b802d24231ec2b.png)
+##### Solution:![fcfa091d93673ad43b802d24231ec2b](fcfa091d93673ad43b802d24231ec2b.png)
