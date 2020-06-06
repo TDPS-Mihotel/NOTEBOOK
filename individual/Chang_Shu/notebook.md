@@ -418,7 +418,7 @@ The processed images are shown as follows.
 <img src="imgs/visualization1.png" alt="visualization1.png" style="zoom: 100%;"  />
 
 
-<img src="imgs/visualization1.png" alt="visualization1.png" style="zoom: 100%;"  />
+<img src="imgs/visualization2.png" alt="visualization1.png" style="zoom: 100%;"  />
 
-<img src="imgs/visualization1.png" alt="visualization1.png" style="zoom: 100%;"  />
+<img src="imgs/visualization3.png" alt="visualization1.png" style="zoom: 100%;"  />
 
