@@ -1,6 +1,6 @@
 # Notebook of Mihotel
 
-![](README/Mihotel.svg)
+![](individual/Mihotel.svg)
 
 ![](individual/commits.svg) ![](individual/open.svg) ![](individual/closed.svg)
 
