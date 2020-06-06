@@ -1,6 +1,10 @@
+### Table of Content
+
 1. [Subject: Apply filters to smooth the image](#Subject-Apply-filters-to-smooth-the-image)
 2. [Subject: <u>Fix the value range of each color in HSV space</u>](#Subject-uFix-the-value-range-of-each-color-in-HSV-spaceu)
 3. [Subject: <u>Use green block as the beacon</u>](#Subject-uUse-green-block-as-the-beaconu)
+
+---
 
 ### Subject: Apply filters to smooth the image
 

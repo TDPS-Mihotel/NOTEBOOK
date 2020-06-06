@@ -29,7 +29,7 @@
 | Conclusion         | Decide to design a multiprocessing system.      |
 | Issues             | /                                               |
 
-![img](Zhuheng_Song/regular_development.svg)
+![img](notebook/regular_development.svg)
 
 There is no doubt that a whole control process goes like this:
 
@@ -404,11 +404,11 @@ https://github.com/TDPS-Mihotel/Mihotel/commit/4c2b7783ddab01784b9c44c5c3a0891a6
 
 https://github.com/TDPS-Mihotel/Mihotel/commit/b0b035c62b241ffe9d51122a44ee14f89aec20db
 
-![](Zhuheng_Song/controller_synchronization.png)
+![](notebook/controller_synchronization.png)
 
 I finally understand what this graph what to say: every time `wb_robot_step()` is called in controller, the time step specified in `wb_robot_step()` passes in simulation. That means, **time cost in a control loop does not influent the simulation result at all.** It only influent the simulation speed. The equation is: $simulation\ speed=\frac{control\ loop\ time\ step}{time\ spent\ in\ a control\ loop}$
 
-![](Zhuheng_Song/control_loop.svg)
+![](notebook/control_loop.svg)
 
 In our case, it means: $simulation\ speed=\frac{t}{x+a+b}$
 
@@ -420,12 +420,12 @@ In addition, since we are using multiprocessing, we can isolate the time cost by
 
 So I design the cycle like this:
 
-![](Zhuheng_Song/final_control_loop.svg)
+![](notebook/final_control_loop.svg)
 
 The **detector process** will process sensors data and send all signals to the **decider process** every time a signal is updated, then the **decider process** will send command to the **controller process**, where the command is parsed into a dictionary of motors velocity. In addition, no matter a command is sent to **controller process** or not, it will send the motors velocity dictionary to the main process once every 5 ms. And before receiving the motors velocity dictionary, the main process will be blocked for 20ms, leave time for the three processes to do the work. Therefore, the simulation speed is now $\frac{32}{30+a+b}$, almost the best we could do, since we could not reduce a and b from the code. According to my test, value of $a+b$ could vary **from 0ms to 70ms**.
 
 Here is the result:
 
-![image-20200606002950051](Zhuheng_Song/output.png)
+![image-20200606002950051](notebook/output.png)
 
 We can see from the output that there is at most delay of one frame between the simulation and motors velocity, which means in the simulation the motors velocity has a delay of 32ms. This is acceptable for our program.

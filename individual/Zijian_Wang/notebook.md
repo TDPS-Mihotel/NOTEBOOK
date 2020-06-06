@@ -7,6 +7,8 @@
 5. [Subject: <u>Finish the initial whole process</u>](#Subject-uFinish-the-initial-whole-processu)
 6. [Subject: <u>Finish the state logic graph and general flow chart</u>](#Subject-uFinish-the-state-logic-graph-and-general-flow-chartu)
 
+---
+
 ### Subject: Make the initial flow chart of simulation on Webots
 
 #### Date: <u>April 18</u>   Author: <u>Zijian Wang</u>
