@@ -24,7 +24,7 @@
 
 #### specification:
 
-![img](notebook.assets/MKA0QFR9H4%Z28VQ%I@3EX.png)
+![tut](notebook.assets/tut.png)
 
 | part  | size                       | unit |
 | ----- | -------------------------- | ---- |
@@ -97,7 +97,7 @@ int main(int argc, char **argv) {
 
 - editing model with solid works
 
-![}O$NT@0%UWPRHE86`RTE6YP](notebook.assets/}O$NT@0%UWPRHE86`RTE6YP.png)
+![sw](notebook.assets/sw.png)
 
 - importing errors occur
 
