@@ -1,6 +1,6 @@
 ### Table of Content
 
-1. [Subject: Learn GitHub and Other Online Tools](#Learn-GitHub-and-Other-Online-Tools)
+1. [Subject: Learn GitHub and Other Online Tools](#subject-learn-github-and-other-online-tools)
 2. [Subject: The Requirements of Environment](#Subject-The-Requirements-of-Environment)
 3. [Subject: Organize and Summarize the Contents of Notebook](#Subject-Organize-and-Summarize-the-Contents-of-Notebook)
 4. [Subject: Overall Planning of Defense PPT](#Subject-Overall-Planning-of-Defense-PPT)
