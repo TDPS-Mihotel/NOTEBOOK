@@ -8,14 +8,7 @@
 6. [2020.04.28 Multiprocessing Webots Controller](#20200428-Multiprocessing-Webots-Controller)
 7. [2020.04.29 Plain Output in Webots on Windows Fixing](#20200429-Plain-Output-in-Webots-on-Windows-Fixing)
 8. [2020.04.30 Real Rover & Webots Rover Compatibility](#20200430-Real-Rover--Webots-Rover-Compatibility)
-9. [2020.04.30 Keyboard Event Support](#20200430-Keyboard-Event-Support)
 10. [2020.05.13 Webots Devices Access Fixing](#20200513-Webots-Devices-Access-Fixing)
-11. [2020.05.17 Finish Sign Output](#20200517-Finish-Sign-Output)
-12. [2020.05.22 Data Delay in Queue Fixing](#20200522-Data-Delay-in-Queue-Fixing)
-13. [2020.05.23 Force Termination Fixing](#20200523-Force-Termination-Fixing)
-14. [2020.05.25 Data Delay in Queue Fixing2](#20200525-Data-Delay-in-Queue-Fixing2)
-15. [2020.05.27 Signal Inexistence Fixing](#20200527-Signal-Inexistence-Fixing)
-16. [2020.05.30 Data Delay in Queue Fixing3](#20200530-Data-Delay-in-Queue-Fixing3)
 17. [2020.06.02 Refactor and Performance](#20200602-Refactor-and-Performance)
 
 ---
@@ -166,6 +159,10 @@ That is:
 
 [multiprocessing.Queue()](https://docs.python.org/3/library/multiprocessing.html#multiprocessing.Queue) is used to communicate between processes. Although according to a [Stack Overflow answser](https://stackoverflow.com/a/8463046/10088906), **`multiprocessing.Pipe()` performs much faster**, but `Queue()` seems more easy to write, so use `Queue()` to communicate between processes for the present. There seems to be no delay in the queues so far.
 
+The system structure now is:
+
+![](notebook/processes.svg)
+
 Code in the main process looks like this:
 
 ```python
@@ -221,8 +218,6 @@ while True:
 | Conclusion         | It seems Windows does not support multiprocessing that well |
 | Issues             | /                                                           |
 
-https://github.com/TDPS-Mihotel/Mihotel/commit/f596f7a00628964994f570b3bd3b7b968d8b1e78
-
 When running the code above on Windows, got following error message:
 
 ``` shell
@@ -241,10 +236,6 @@ After some research found out that lines related to multiprocessing need to be u
 | Keyword            | Webots, Multiprocessing                                      |
 | Conclusion         | We are able to design a multiprocessing webots controller now, but this implement does not looks decent |
 | Issues             | I do not know if there is a better way to do it, and I do not know if this implement introduces any bugs... |
-
-https://github.com/TDPS-Mihotel/Mihotel/commit/25b28aacbf9244f37ab6ee26aa66ec87367cc803
-
-https://github.com/TDPS-Mihotel/Mihotel/commit/7c99397c3791545c5a65ccc0bc75749dcffb5cbd
 
 According to webots's description of [relationship between simulation step and control step](https://cyberbotics.com/doc/guide/controller-programming#the-step-and-wb_robot_step-functions), the behavior of the robot is controlled by the code in the control loop, and take affect after `wb_robot_step()` is called. And if the main loop does not start with `wb_robot_step()`, we could not stop the control loop while <kbd>pause</kbd> is pressed in webots. It seems webots does not provide support for multiprocessing, so we have to make a workaround by ourselves.
 
@@ -281,117 +272,68 @@ while True:
 
 ## 2020.04.29 Plain Output in Webots on Windows Fixing
 
-| Experiment Title   |      |
-| ------------------ | ---- |
-| Experiment Purpose |      |
-| Keyword            |      |
-| Conclusion         |      |
-| Issues             |      |
+| Experiment Title   | Plain Output in Webots on Windows Fixing    |
+| ------------------ | ------------------------------------------- |
+| Experiment Purpose | figure out the reason and then fix this bug |
+| Keyword            | ANSI, Windows                               |
+| Conclusion         | Leaving output in Webots on Windows plain   |
+| Issues             | This is a bug of webots console             |
 
 https://github.com/TDPS-Mihotel/Mihotel/commit/8771398c14971b905962861cb1de8c545d6c52fc
 
+According to [document of colorama](https://github.com/tartley/colorama#initialisation):
+
+> On Windows, calling `init()` will filter ANSI escape sequences out of any text sent to **stdout** or **stderr**, and replace them with equivalent Win32 calls.
+
+After testing, the colorful output works fine in cms and PowerShell, However, according to [document of the ANSI escape codes support feature](https://github.com/cyberbotics/webots/blob/develop/docs/guide/controller-programming.md#console-output) webots 2020b provides, we should not convert ANSI escape sequences to Win32 calls even on Windows when running in webots console. So I tried limit to call `colorama.init()` only when on Windows and webots not running. The output could be colorful now, but then a wired bug happens: output would stuck after a few lines. I did not figure out why this happens, I suppose this is a bug of webots. So let's leave output in Webots on Windows plain.
+
 ## 2020.04.30 Real Rover & Webots Rover Compatibility
 
-| Experiment Title   |      |
-| ------------------ | ---- |
-| Experiment Purpose |      |
-| Keyword            |      |
-| Conclusion         |      |
-| Issues             |      |
+| Experiment Title   | Real Rover & Webots Rover Compatibility                      |
+| ------------------ | ------------------------------------------------------------ |
+| Experiment Purpose | try to allow one piece of code works for both real rover and webots rover |
+| Keyword            | psutil, environment variable                                 |
+| Conclusion         | This is still just a workaround, not decent enough.          |
+| Issues             | I do not know if it is simple to specifically write code for a simulation robot... |
 
-https://github.com/TDPS-Mihotel/Mihotel/commit/c18485fcd669e015734d5b8a1d6ba2b850770542
+Since I think it could be wired that we have to write code for real rover and webots rover separately, I try to add some conditions in the code to allow one piece of code could work for both real rover and webots rover. By doing so, we could reduce the difference between behavior of rover in real world and simulation to the minimum.
 
-## 2020.04.30 Keyboard Event Support
+I first tried to detect whether the program is run as a simulation by checking if there is webots specific environment variables, but I then find I does not work for running the simulation with an external controller.
 
-| Experiment Title   |      |
-| ------------------ | ---- |
-| Experiment Purpose |      |
-| Keyword            |      |
-| Conclusion         |      |
-| Issues             |      |
+[With the help of developer of webots](https://github.com/cyberbotics/webots/issues/1602), I decide to check whether there is a process, which name includes **webots**. This works for both Linux and Windows:
 
-https://github.com/TDPS-Mihotel/Mihotel/commit/fb98b8576c32fc084975f67bbba72cf72967efbe
+```python
+import psutil
+flag_simulation = len([p.name() for p in psutil.process_iter() if 'webots' in p.name()])
+```
 
 ## 2020.05.13 Webots Devices Access Fixing
 
-| Experiment Title   |      |
-| ------------------ | ---- |
-| Experiment Purpose |      |
-| Keyword            |      |
-| Conclusion         |      |
-| Issues             |      |
+| Experiment Title   | Webots Devices Access Fixing                                 |
+| ------------------ | ------------------------------------------------------------ |
+| Experiment Purpose | fix access to webots devices                                 |
+| Keyword            | Swig, pickle, multiprocessing                                |
+| Conclusion         | An ugly workaround which introduces two delay                |
+| Issues             | It seems there is support for C but not Python. Since webots choose to use Swig, it is not easy to fix. |
 
 https://github.com/TDPS-Mihotel/Mihotel/commit/ba8d1d9142acb6e8fdff722719e9e387dfd5453b
 
 https://github.com/TDPS-Mihotel/Mihotel/commit/84fbc64524f766934a4cac060e2ea5d5363b4294
 
-## 2020.05.17 Finish Sign Output
+Since variables are not shared between processes by default, the three child processes could not access the webots `robot` instance so far. The problem is, this instance could not be transfered to other processes. I tried `multiprocessing.Queue()`, but I got:
 
-| Experiment Title   |      |
-| ------------------ | ---- |
-| Experiment Purpose |      |
-| Keyword            |      |
-| Conclusion         |      |
-| Issues             |      |
+```shell
+TypeError: can't pickle SwigPyObject objects
+```
 
-## 2020.05.22 Data Delay in Queue Fixing
+Since this instance is a **SwigPyObject** which could not be pickled, we could not pass this variable to another process by any method. Therefore I add two queues:
 
-| Experiment Title   |      |
-| ------------------ | ---- |
-| Experiment Purpose |      |
-| Keyword            |      |
-| Conclusion         |      |
-| Issues             |      |
+- a `sensors_queue` to transfer data from webots sensors to the detector process
+- a `motors_queue` to transfer motors velocity to set to the webots motors from the controller process to the main process.
 
-https://github.com/TDPS-Mihotel/Mihotel/commit/cd71ba74f301a7041cd27b96ec57f1464959dcc6
+So the system looks like this now:
 
-## 2020.05.23 Force Termination Fixing
-
-| Experiment Title   |      |
-| ------------------ | ---- |
-| Experiment Purpose |      |
-| Keyword            |      |
-| Conclusion         |      |
-| Issues             |      |
-
-https://github.com/TDPS-Mihotel/Mihotel/commit/a3061c61ba421171fe6a6e9cdc1392c41560efa9
-
-https://github.com/TDPS-Mihotel/Mihotel/commit/17d78d013bfd090386f1ca338c4bda64c6bda664
-
-## 2020.05.25 Data Delay in Queue Fixing2
-
-| Experiment Title   |      |
-| ------------------ | ---- |
-| Experiment Purpose |      |
-| Keyword            |      |
-| Conclusion         |      |
-| Issues             |      |
-
-https://github.com/TDPS-Mihotel/Mihotel/commit/13247d5e7aaa6246b1399515236ce47b577edc4a
-
-## 2020.05.27 Signal Inexistence Fixing
-
-| Experiment Title   |      |
-| ------------------ | ---- |
-| Experiment Purpose |      |
-| Keyword            |      |
-| Conclusion         |      |
-| Issues             |      |
-
-https://github.com/TDPS-Mihotel/Mihotel/commit/39c1ef74ffca84696e14d2fcb1adbe4239000356
-
-## 2020.05.30 Data Delay in Queue Fixing3
-
-| Experiment Title   |      |
-| ------------------ | ---- |
-| Experiment Purpose |      |
-| Keyword            |      |
-| Conclusion         |      |
-| Issues             |      |
-
-https://github.com/TDPS-Mihotel/Mihotel/commit/4e77bb28b77202a564703fa336fc5e110dcac142
-
-https://github.com/TDPS-Mihotel/Mihotel/commit/4c2b7783ddab01784b9c44c5c3a0891a6ac0e578
+![](notebook/system.svg)
 
 ## 2020.06.02 Refactor and Performance
 
