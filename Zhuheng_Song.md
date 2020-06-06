@@ -29,7 +29,7 @@
 | Conclusion         | Decide to design a multiprocessing system.      |
 | Issues             | /                                               |
 
-![img](Zhuheng Song/regular_development.svg)
+![img](Zhuheng_Song/regular_development.svg)
 
 There is no doubt that a whole control process goes like this:
 
@@ -239,12 +239,45 @@ After some research found out that lines related to multiprocessing need to be u
 | ------------------ | ------------------------------------------------------------ |
 | Experiment Purpose | try to merge our multiprocessing framework into webots controller |
 | Keyword            | Webots, Multiprocessing                                      |
-| Conclusion         |                                                              |
-| Issues             |                                                              |
+| Conclusion         | We are able to design a multiprocessing webots controller now, but this implement does not looks decent |
+| Issues             | I do not know if there is a better way to do it, and I do not know if this implement introduces any bugs... |
 
 https://github.com/TDPS-Mihotel/Mihotel/commit/25b28aacbf9244f37ab6ee26aa66ec87367cc803
 
 https://github.com/TDPS-Mihotel/Mihotel/commit/7c99397c3791545c5a65ccc0bc75749dcffb5cbd
+
+According to webots's description of [relationship between simulation step and control step](https://cyberbotics.com/doc/guide/controller-programming#the-step-and-wb_robot_step-functions), the behavior of the robot is controlled by the code in the control loop, and take affect after `wb_robot_step()` is called. And if the main loop does not start with `wb_robot_step()`, we could not stop the control loop while <kbd>pause</kbd> is pressed in webots. It seems webots does not provide support for multiprocessing, so we have to make a workaround by ourselves.
+
+To pause all processes when the <kbd>pause</kbd> button is presses in webots, a variable `flag_pause` allocated from shared memory is used. This variable is created with [multiprocessing.Value()](https://docs.python.org/2/library/multiprocessing.html#multiprocessing.Value). The initial value of this flag is **True**, and is set to **False** at the end of main loop in the main process, to indicate that this loop is not paused in webots, so every child process are allowed to execute once. Then in the decider process this flag is set to **True** again to show a loop has done, and is waiting for next time step.
+
+So the main loop of the main process looks like this:
+
+```python
+if __name__ == "__main__" and flag_simulation:
+    from controller import AnsiCodes, Robot
+    # create the Robot instance.
+    robot = Robot()
+    # get the time step of the current world.
+    timestep = int(robot.getBasicTimeStep())
+    # Main loop:
+    # - perform simulation steps until Webots is stopping the controller
+    while robot.step(timestep) != -1:
+        # resume decider process
+        with lock:
+            flag_pause.value = False
+```
+
+The main loop of the decider process looks like this:
+
+```python
+while True:
+    if not (signal_queue.empty() or flag_pause.value):
+        self.detected = signal_queue.get(True)
+        detectedInfo('time:' + str(self.detected))
+        command_queue.put('move straight forward')
+        with lock:
+            flag_pause.value = True
+```
 
 ## 2020.04.29 Plain Output in Webots on Windows Fixing
 
@@ -362,11 +395,37 @@ https://github.com/TDPS-Mihotel/Mihotel/commit/4c2b7783ddab01784b9c44c5c3a0891a6
 
 ## 2020.06.02 Refactor and Performance
 
-| Experiment Title   |      |
-| ------------------ | ---- |
-| Experiment Purpose |      |
-| Keyword            |      |
-| Conclusion         |      |
-| Issues             |      |
+| Experiment Title   | Refactor and Performance                                     |
+| ------------------ | ------------------------------------------------------------ |
+| Experiment Purpose | refactor the code and try to improve the performance         |
+| Keyword            | delay, simulation time step, multiprocessing                 |
+| Conclusion         | with the help of multiprocessing, we could significantly improve the simulation speed with acceptable delay |
+| Issues             | /                                                            |
 
 https://github.com/TDPS-Mihotel/Mihotel/commit/b0b035c62b241ffe9d51122a44ee14f89aec20db
+
+![](Zhuheng_Song/controller_synchronization.png)
+
+I finally understand what this graph what to say: every time `wb_robot_step()` is called in controller, the time step specified in `wb_robot_step()` passes in simulation. That means, **time cost in a control loop does not influent the simulation result at all.** It only influent the simulation speed. The equation is: $simulation\ speed=\frac{control\ loop\ time\ step}{time\ spent\ in\ a control\ loop}$
+
+![](Zhuheng_Song/control_loop.svg)
+
+In our case, it means: $simulation\ speed=\frac{t}{x+a+b}$
+
+Suppose $\overline a$ and $\overline b$ do not change significantly when t various, just depend on the performance of computer, then we can see that the simulation could be faster with larger control loop time step, less time cost by our code.
+
+Since large control loop time step leads to slow response, set it to a reasonable length, twice of `BasicTimeStep`, 32ms.
+
+In addition, since we are using multiprocessing, we can isolate the time cost by our code from the time a control loop spent.
+
+So I design the cycle like this:
+
+![](Zhuheng_Song/final_control_loop.svg)
+
+The **detector process** will process sensors data and send all signals to the **decider process** every time a signal is updated, then the **decider process** will send command to the **controller process**, where the command is parsed into a dictionary of motors velocity. In addition, no matter a command is sent to **controller process** or not, it will send the motors velocity dictionary to the main process once every 5 ms. And before receiving the motors velocity dictionary, the main process will be blocked for 20ms, leave time for the three processes to do the work. Therefore, the simulation speed is now $\frac{32}{30+a+b}$, almost the best we could do, since we could not reduce a and b from the code. According to my test, value of $a+b$ could vary **from 0ms to 70ms**.
+
+Here is the result:
+
+![image-20200606002950051](Zhuheng_Song/output.png)
+
+We can see from the output that there is at most delay of one frame between the simulation and motors velocity, which means in the simulation the motors velocity has a delay of 32ms. This is acceptable for our program.
